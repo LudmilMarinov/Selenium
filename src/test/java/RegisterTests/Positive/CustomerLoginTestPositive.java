@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -27,13 +28,13 @@ public class CustomerLoginTestPositive {
         driver.get("https://shop.pragmatic.bg/index.php?route=account/login");
     }
 
-//    /**
-//     * After test is complete quits the opened browser
-//     */
-//    @AfterMethod
-//    void tearDown() {
-//        driver.quit();
-//    }
+    /**
+     * After test is complete quits the opened browser
+     */
+    @AfterMethod
+    void tearDown() {
+        driver.quit();
+    }
     @Test
     public void loginTestWithCorrectCredentials() {
         driver.findElement(By.id("input-email")).sendKeys("L_marinov92@abv.bg");
